@@ -45,3 +45,30 @@ if [ ! -d "$CLAUDE_DIR" ]; then
   mkdir -p "$CLAUDE_DIR"
 fi
 link_safely "$RULE_FILE" "$CLAUDE_DIR/CLAUDE.md" $CLAUDE_NAME
+
+# 2. Codex (~/.codex/AGENTS.md & config.toml)
+CODEX_NAME="Codex"
+CODEX_DIR="$HOME/.codex"
+if [ ! -d "$CODEX_DIR" ]; then
+  mkdir -p "$CODEX_DIR"
+fi
+link_safely "$RULE_FILE" "$CODEX_DIR/AGENTS.md" $CODEX_NAME
+
+CODEX_CONF="$CODEX_DIR/config.toml"
+if [ -f "$CODEX_CONF" ]; then
+  if grep -q "instructions_file" "$CODEX_CONF"; then
+    echo "[Codex] instructions_file already configured in $CODEX_CONF"
+  else
+    echo "instructions_file = \"$CODEX_DIR/AGENTS.md\"" >> "$CODEX_CONF"
+    echo "[Codex] Appended instructions_file to existing config: $CODEX_CONF"
+  fi
+else
+  cat <<EOF > "$CODEX_CONF"
+instructions_file = "$CODEX_DIR/AGENTS.md"
+
+[tools]
+auto_approve_readonly = true
+disallowed_commands = ["git commit", "git push", "git rebase"]
+EOF
+  echo "[Codex] Created default config: $CODEX_CONF"
+fi
