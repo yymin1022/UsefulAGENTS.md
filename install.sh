@@ -74,11 +74,11 @@ EOF
 fi
 
 # 3. Antigravity (~/.agent/AGENTS.md)
-AGENT_NAME="Antigravity"
-AGENT_DIR="$HOME/.agent"
-if [ ! -d "$AGENT_DIR" ]; then
-  mkdir -p "$AGENT_DIR"
+ANTIGRAVITY_NAME="Antigravity"
+ANTIGRAVITY_DIR="$HOME/.agent"
+if [ ! -d "$ANTIGRAVITY_DIR" ]; then
+  mkdir -p "$ANTIGRAVITY_DIR"
 fi
-link_safely "$RULE_FILE" "$AGENT_DIR/AGENTS.md" "$AGENT_NAME"
+link_safely "$RULE_FILE" "$ANTIGRAVITY_DIR/AGENTS.md" "$ANTIGRAVITY_NAME"
 
 echo "All global rules have been successfully installed."
