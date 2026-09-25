@@ -44,7 +44,7 @@ CLAUDE_DIR="$HOME/.claude"
 if [ ! -d "$CLAUDE_DIR" ]; then
   mkdir -p "$CLAUDE_DIR"
 fi
-link_safely "$RULE_FILE" "$CLAUDE_DIR/CLAUDE.md" $CLAUDE_NAME
+link_safely "$RULE_FILE" "$CLAUDE_DIR/CLAUDE.md" "$CLAUDE_NAME"
 
 # 2. Codex (~/.codex/AGENTS.md & config.toml)
 CODEX_NAME="Codex"
@@ -52,7 +52,7 @@ CODEX_DIR="$HOME/.codex"
 if [ ! -d "$CODEX_DIR" ]; then
   mkdir -p "$CODEX_DIR"
 fi
-link_safely "$RULE_FILE" "$CODEX_DIR/AGENTS.md" $CODEX_NAME
+link_safely "$RULE_FILE" "$CODEX_DIR/AGENTS.md" "$CODEX_NAME"
 
 CODEX_CONF="$CODEX_DIR/config.toml"
 if [ -f "$CODEX_CONF" ]; then
@@ -79,6 +79,6 @@ AGENT_DIR="$HOME/.agent"
 if [ ! -d "$AGENT_DIR" ]; then
   mkdir -p "$AGENT_DIR"
 fi
-link_safely "$RULE_FILE" "$AGENT_DIR/AGENTS.md" $AGENT_NAME
+link_safely "$RULE_FILE" "$AGENT_DIR/AGENTS.md" "$AGENT_NAME"
 
 echo "All global rules have been successfully installed."
