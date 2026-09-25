@@ -36,3 +36,12 @@ link_safely() {
   ln -sf "$src" "$dst"
   echo "[$tool_name] Successfully linked: $dst"
 }
+
+### Generate for each tool
+# 1. Claude Code (~/.claude/CLAUDE.md)
+CLAUDE_NAME="Claude Code"
+CLAUDE_DIR="$HOME/.claude"
+if [ ! -d "$CLAUDE_DIR" ]; then
+  mkdir -p "$CLAUDE_DIR"
+fi
+link_safely "$RULE_FILE" "$CLAUDE_DIR/CLAUDE.md" $CLAUDE_NAME
