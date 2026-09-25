@@ -72,3 +72,11 @@ disallowed_commands = ["git commit", "git push", "git rebase"]
 EOF
   echo "[Codex] Created default config: $CODEX_CONF"
 fi
+
+# 3. Antigravity (~/.agent/AGENTS.md)
+AGENT_NAME="Antigravity"
+AGENT_DIR="$HOME/.agent"
+if [ ! -d "$AGENT_DIR" ]; then
+  mkdir -p "$AGENT_DIR"
+fi
+link_safely "$RULE_FILE" "$AGENT_DIR/AGENTS.md" $AGENT_NAME
