@@ -80,3 +80,5 @@ if [ ! -d "$AGENT_DIR" ]; then
   mkdir -p "$AGENT_DIR"
 fi
 link_safely "$RULE_FILE" "$AGENT_DIR/AGENTS.md" $AGENT_NAME
+
+echo "All global rules have been successfully installed."
