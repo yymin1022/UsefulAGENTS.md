@@ -73,9 +73,9 @@ EOF
   echo "[Codex] Created default config: $CODEX_CONF"
 fi
 
-# 3. Antigravity (~/.agent/AGENTS.md)
+# 3. Antigravity (~/.gemini/AGENTS.md)
 ANTIGRAVITY_NAME="Antigravity"
-ANTIGRAVITY_DIR="$HOME/.agent"
+ANTIGRAVITY_DIR="$HOME/.gemini"
 if [ ! -d "$ANTIGRAVITY_DIR" ]; then
   mkdir -p "$ANTIGRAVITY_DIR"
 fi
