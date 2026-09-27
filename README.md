@@ -22,7 +22,6 @@ Currently `Claude Code`, `Codex`, `Antigrativy` is supported.
 | [유용민](https://github.com/yymin1022) |
 |---|
 | <img src="https://github.com/GDSC-CAU/Vridge-Android/assets/62137001/1904f22f-6086-4bc9-8a9d-2f6875b117fe" width="150" /> |
-| Rule |
 | Developer |
 
 ## Useful links
